@@ -1,5 +1,5 @@
 import { MessageCircle, ShieldCheck } from "lucide-react";
-import heroImage from "@/assets/hero-plumber.jpg";
+import heroImage from "@/assets/hero-bathroom.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491100000000?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
 
@@ -7,13 +7,16 @@ const Hero = () => (
   <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
     <img
       src={heroImage}
-      alt="Plomero profesional trabajando"
+      alt="Baño con azulejos y grifería"
       className="absolute inset-0 w-full h-full object-cover"
       width={1920}
       height={1080}
     />
     <div className="absolute inset-0 bg-foreground/70" />
     <div className="relative z-10 container mx-auto px-4 text-center max-w-3xl py-20">
+      <p className="text-3xl md:text-4xl font-bold tracking-[0.2em] text-primary-foreground mb-4">
+        MATÍAS
+      </p>
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight text-balance mb-6">
         Soluciones rápidas y confiables en plomería y gas
       </h1>
