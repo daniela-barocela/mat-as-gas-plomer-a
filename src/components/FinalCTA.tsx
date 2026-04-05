@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5491100000000?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
+const WHATSAPP_URL = "https://wa.me/5491140736417?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
 
 const FinalCTA = () => (
   <section className="py-20">

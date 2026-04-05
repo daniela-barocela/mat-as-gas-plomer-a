@@ -4,7 +4,7 @@ import collageKitchen from "@/assets/hero-kitchen.jpg";
 import collageWorker from "@/assets/hero-collage-worker.jpg";
 import collageStove from "@/assets/hero-collage-stove.jpg";
 
-const WHATSAPP_URL = "https://wa.me/5491100000000?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
+const WHATSAPP_URL = "https://wa.me/5491140736417?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
 
 const collageTiles = [
   { src: collageBathroom, label: "Baño" },
