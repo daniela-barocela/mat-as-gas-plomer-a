@@ -6,6 +6,8 @@ interface ServiceSectionProps {
   icon: ReactNode;
   colorClass: string;
   bgClass: string;
+  /** Subtítulo que agrupa los ítems siguientes (p. ej. instalación / reparación / mantenimiento). */
+  itemsHeading?: string;
   items: string[];
   pipingTitle: string;
   pipingItems: string[];
@@ -19,6 +21,7 @@ const ServiceSection = ({
   icon,
   colorClass,
   bgClass,
+  itemsHeading,
   items,
   pipingTitle,
   pipingItems,
@@ -32,14 +35,21 @@ const ServiceSection = ({
       <h3 className="text-2xl font-bold text-foreground">{title}</h3>
     </div>
 
-    <ul className="grid sm:grid-cols-2 gap-2 mb-6">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2 text-foreground/80">
-          <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-muted-foreground" />
-          {item}
-        </li>
-      ))}
-    </ul>
+    <div className="mb-6">
+      {itemsHeading && (
+        <p className="font-semibold text-foreground mb-3">{itemsHeading}</p>
+      )}
+      <ul
+        className={`grid sm:grid-cols-2 gap-2 ${itemsHeading ? "pl-4 border-l-2 border-muted/50" : ""}`}
+      >
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-2 text-foreground/80">
+            <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-muted-foreground" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
 
     <div className="grid md:grid-cols-2 gap-6">
       <div>
@@ -93,8 +103,8 @@ const Services = () => (
           icon={<Flame className="w-6 h-6 text-service-gas" />}
           colorClass="bg-service-gas-bg"
           bgClass="bg-service-gas-bg/50"
+          itemsHeading="Instalación, reparación y mantenimiento"
           items={[
-            "Instalación, reparación y mantenimiento",
             "Termotanques",
             "Calefones",
             "Calefactores",
@@ -119,8 +129,8 @@ const Services = () => (
           icon={<Droplets className="w-6 h-6 text-service-plumbing" />}
           colorClass="bg-service-plumbing-bg"
           bgClass="bg-service-plumbing-bg/50"
+          itemsHeading="Instalación, reparación y mantenimiento"
           items={[
-            "Instalación, reparación y mantenimiento",
             "Sanitarios",
             "Grifería",
             "Termotanques",
