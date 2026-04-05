@@ -1,17 +1,35 @@
 import { MessageCircle, ShieldCheck } from "lucide-react";
-import heroImage from "@/assets/hero-kitchen.jpg";
+import collageBathroom from "@/assets/hero-collage-bathroom.jpg";
+import collageKitchen from "@/assets/hero-kitchen.jpg";
+import collageWorker from "@/assets/hero-collage-worker.jpg";
+import collageStove from "@/assets/hero-collage-stove.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491100000000?text=Hola%20Matías%2C%20necesito%20un%20presupuesto";
 
+const collageTiles = [
+  { src: collageBathroom, label: "Baño" },
+  { src: collageKitchen, label: "Cocina" },
+  { src: collageWorker, label: "Instalación y reparación" },
+  { src: collageStove, label: "Gas y cocina" },
+] as const;
+
 const Hero = () => (
   <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-    <img
-      src={heroImage}
-      alt="Cocina moderna con muebles y grifería"
-      className="absolute inset-0 w-full h-full object-cover"
-      width={1920}
-      height={1080}
-    />
+    <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1 bg-foreground sm:gap-1.5" aria-hidden="true">
+      {collageTiles.map((tile, i) => (
+        <div key={tile.label} className="relative min-h-0 overflow-hidden">
+          <img
+            src={tile.src}
+            alt=""
+            width={1200}
+            height={800}
+            className="h-full min-h-[45vh] w-full object-cover object-center sm:min-h-0"
+            decoding="async"
+            fetchPriority={i === 0 ? "high" : "low"}
+          />
+        </div>
+      ))}
+    </div>
     <div className="absolute inset-0 bg-foreground/70" />
     <div className="relative z-10 container mx-auto px-4 text-center max-w-3xl py-20">
       <div
